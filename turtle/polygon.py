@@ -1,5 +1,6 @@
+from __future__ import print_function, division
 import math
-# import turtle #Import turtle module
+import turtle #Import turtle module
 # bob = turtle.Turtle() #Creates a Turtle object, which we assign to a variable named bob
 # print(bob) 
 
@@ -52,9 +53,9 @@ def arc(t, r, angle):
     #step_angle: degrees between segments
     step_angle = float(angle) / n
 
-    t.lt(step_angle / 2)
+    t.lt(step_angle/2)
     polyline(t, step_length, n, step_angle)
-    t.lt(step_angle / 2)
+    t.rt(step_angle/2)
 
 # arc(bob, 400, 360)
 
@@ -65,4 +66,16 @@ def circle(t, r):
     """
     arc(t, r, 360)
 
-# turtle.mainloop() #tells the window to wait for the user to do something
+if __name__ == '__main__':
+    bob = turtle.Turtle()
+
+    # draw a circle centered on the origin
+    radius = 100
+    bob.pu()
+    bob.fd(radius)
+    bob.lt(90)
+    bob.pd()
+    circle(bob, radius)
+
+    # wait for the user to close the window
+    turtle.mainloop()

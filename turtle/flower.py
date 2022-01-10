@@ -1,6 +1,5 @@
 import turtle
 from polygon import arc
-bob = turtle.Turtle()
 
 def petal(t, r, angle): 
     """Draw petals with given radius and angle
@@ -31,6 +30,8 @@ def move(t, length):
     t.fd(length)
     t.pd()
 
+bob = turtle.Turtle()
+
 move(bob, -100)
 flower(bob, 60.0, 60.0, 7)
 
@@ -40,4 +41,5 @@ flower(bob, 40.0, 80.0, 10)
 move(bob, 100)
 flower(bob, 140.0, 20.0, 20)
 
-turtle.mainloop() #tells the window to wait for the user to do something
+bob.hideturtle()
+turtle.mainloop()
